@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Chat App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="chat-container">
+        <!-- Chat Header -->
+        <div id="chat-header">
+            <h1>Chat App</h1>
+            <input id="search-bar" type="text" placeholder="Search messages..." aria-label="Search messages">
+            <button id="theme-toggle" aria-label="Toggle Theme">🌙</button>
+            <button id="settings-btn" aria-label="Settings">⚙️</button>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="messages" tabindex="0" aria-live="polite" aria-label="Chat messages">
+            <!-- Messages will be dynamically loaded here -->
+        </div>
+
+        <!-- Typing Indicator -->
+        <div id="typing-indicator" class="hidden" aria-live="polite">
+            Someone is typing...
+        </div>
+
+        <!-- Input Section -->
+        <div id="input-container">
+            <button id="emoji-picker-btn" aria-label="Emoji Picker">😊</button>
+            <input id="message-input" type="text" placeholder="Type your message..." aria-label="Type your message">
+            <button id="send-btn" aria-label="Send Message">Send</button>
+        </div>
+
+        <!-- Emoji Picker -->
+        <div id="emoji-picker" class="hidden" aria-hidden="true">
+            <!-- Emoji buttons will be dynamically generated -->
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="hidden" role="dialog" aria-labelledby="settings-modal-title">
+        <div class="modal-content">
+            <h2 id="settings-modal-title">Settings</h2>
+            <label>
+                <input type="checkbox" id="sound-toggle"> Enable Sound Notifications
+            </label>
+            <label for="font-size-select">Font Size:</label>
+            <select id="font-size-select">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+            </select>
+            <label for="theme-select">Theme:</label>
+            <select id="theme-select">
+                <option value="light" selected>Light</option>
+                <option value="dark">Dark</option>
+            </select>
+            <button id="close-settings-btn" aria-label="Close Settings">Close</button>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
